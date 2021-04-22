@@ -14,7 +14,7 @@ public class MovieListMapper implements Converter<List<MovieDto>, List<Movie>> {
     public List<MovieDto> convert(List<Movie> movies) {
         List<MovieDto> moviesDto = new ArrayList<>();
 
-        for(Movie movie: movies) {
+        /*for(Movie movie: movies) {
             MovieDto movieDto = new MovieDto.Builder()
                     .movieId(movie.getMovieId())
                     .title(movie.getTitle())
@@ -23,7 +23,15 @@ public class MovieListMapper implements Converter<List<MovieDto>, List<Movie>> {
                     .build();
 
             moviesDto.add(movieDto);
-        }
+        } */
+
+        moviesDto = movies.stream().map(movie ->
+                new MovieDto.Builder()
+                .MovieDto.getMovieId()
+                .MovieDto.getTitle()
+                .MovieDto.getImage()
+                .MovieDto.getYear()
+        )
 
         return moviesDto;
     }
